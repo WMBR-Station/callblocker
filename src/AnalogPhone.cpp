@@ -40,8 +40,9 @@
 #define AT_HANGUP_STR             "ATH0"
 #define AT_PICKUP_STR             "ATH1"
 
-#define RING_SILENCE_TIME_SEC     7   // when ringing each 5s a RING is expected -> 7s should be long enough
-#define PICKUP_HANGUP_TIME_SEC    2   // pickup and then hangup after 2s
+#define RING_SILENCE_TIME_SEC     7   
+//#define PICKUP_HANGUP_TIME_SEC    2   // pickup and then hangup after 2s
+#define PICKUP_HANGUP_TIME_USEC    100000   // pickup and then hangup after 2s
 
 
 AnalogPhone::AnalogPhone(Block* pBlock) : Phone(pBlock) {
@@ -134,7 +135,7 @@ void AnalogPhone::run() {
 
       if (block) {
         m_modem.sendCommand(AT_PICKUP_STR); // pickup
-        m_hangupTimer.restart(PICKUP_HANGUP_TIME_SEC);
+        m_hangupTimer.restartMicro(PICKUP_HANGUP_TIME_USEC);
       }
     }
   }

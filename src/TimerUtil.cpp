@@ -26,7 +26,14 @@ TimerUtil::TimerUtil() {
   m_active = false;
   timerclear(&elapseTime);
 }
-
+void TimerUtil::restartMicro(time_t elapseMicrosec) {
+  struct timeval add;
+  timerclear(&add);
+  add.tv_usec = elapseMicrosec;
+  getCurrent(&elapseTime);
+  timeradd(&elapseTime, &add, &elapseTime);
+  m_active = true;
+}
 void TimerUtil::restart(time_t elapseSec) {
   struct timeval add;
   timerclear(&add);

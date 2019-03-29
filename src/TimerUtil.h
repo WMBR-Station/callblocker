@@ -33,6 +33,7 @@ public:
   TimerUtil();
 
   void restart(time_t elapseSec);
+  void restartMicro(time_t elapseSec);
   void stop(void);
   bool isActive();
   bool hasElapsed();

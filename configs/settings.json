@@ -1,0 +1,30 @@
+{ 
+  "log_level": "debug",
+  "pjsip_log_level": 2,
+  "phones": [
+    { 
+      "enabled":             true,
+      "name":                "Analog_LINE0",
+      "country_code":        "+41",
+      "block_mode":          "blacklists_only",
+      "block_anonymous_cid": false,
+      "block_invalid_cid":   false,
+      "online_lookup":       "",
+      "online_check":        "",
+      "device":	             "/dev/ttyACM0"
+    }
+  ],
+  "online_credentials": [
+    {
+      "name":     "tellows_de",
+      "username": "<your partner name>",
+      "password": "<your api key>"
+    },
+    {
+      "name":     "whocalled_us",
+      "username": "<your name>",
+      "password": "<your pass>"
+    }
+  ]
+}
+
