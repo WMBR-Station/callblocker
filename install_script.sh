@@ -18,4 +18,5 @@ npm install
 sudo cp -r node_modules/ /usr/var/www/callblocker/js/vendor
 sudo pip3 install flipflop
 sudo usermod -a -G systemd-journal www-data
-
+sudo systemctl start callblockerd.service
+sudo systemctl start lighttpd.service
