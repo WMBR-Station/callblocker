@@ -10,12 +10,12 @@ autoconf
 ./configure --prefix=/usr --sysconfdir=/etc
 make all
 sudo make install
-cp configs/settings.json /etc/callblocker/settings.json
-cp configs/main.json /etc/callblocker/blacklists/main.json
-cd callblocker/usr/var/www/callblocker/js
+sudo cp configs/settings.json /etc/callblocker/settings.json
+sudo cp configs/main.json /etc/callblocker/blacklists/main.json
+sudo cp configs/lighttpd.conf /etc/lighttpd/lighttpd.conf
+cd usr/var/www/callblocker/js
 npm install
 sudo cp -r node_modules/ /usr/var/www/callblocker/js/vendor
 sudo pip3 install flipflop
 sudo usermod -a -G systemd-journal www-data
-sudo cp configs/lighttpd.conf /etc/lighttpd/lighttpd.conf
 
