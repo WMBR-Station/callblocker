@@ -42,7 +42,7 @@
 
 #define RING_SILENCE_TIME_SEC     7   
 //#define PICKUP_HANGUP_TIME_SEC    2   // pickup and then hangup after 2s
-#define PICKUP_HANGUP_TIME_USEC    100000   // pickup and then hangup after 2s
+#define PICKUP_HANGUP_TIME_USEC    10000   // pickup and then hangup after 2s
 
 
 AnalogPhone::AnalogPhone(Block* pBlock) : Phone(pBlock) {
